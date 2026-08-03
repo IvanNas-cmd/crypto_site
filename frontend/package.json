@@ -1,12 +1,14 @@
 {
-  "name": "crypto-trainee-task",
+  "name": "frontend",
+  "version": "0.0.0",
   "private": true,
-  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "frontend:dev": "npm --prefix frontend run dev",
-    "frontend:build": "npm --prefix frontend run build",
-    "frontend:preview": "npm --prefix frontend run preview",
-    "backend:dev": "cd backend && uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.2.0"
   }
 }
-
