@@ -89,3 +89,16 @@ npm run dev
 Дашборд откроется под http://localhost:5173
 
 
+### Конфигурация окружения
+Для корректной работы авторизации создайте файл .env в папке backend/ по примеру файла .env.example
+```bash
+# Файл: backend/.env
+GOOGLE_CLIENT_ID="ваш-client-id-от-google.apps.googleusercontent.com"
+GOOGLE_CLIENT_SECRET="ваш-секретный-ключ"
+FRONTEND_URL="http://localhost:5173"
+```
+
+### Лицензия
+Распространяется под лицензией MIT
+
+Разработано: Иван Насенник (2026)
