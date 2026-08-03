@@ -1,0 +1,151 @@
+/* Базовые настройки остаются прежними... */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: #ffffff; overflow-x: hidden; background: #06142f; }
+
+/* Видео фон и 레이аут (остаются как раньше) */
+.bg-video { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2; pointer-events: none; }
+.bg-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(4, 15, 40, 0.4); z-index: -1; pointer-events: none; }
+#app { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; padding: 0 5%; }
+
+/* Шапка и Геро-блок (остаются как раньше) */
+.header { padding: 30px 0; display: flex; justify-content: space-between; align-items: center; }
+.main-nav { display: flex; gap: 30px; }
+.nav-link { color: #ffffff; text-decoration: none; font-family: 'Space Mono', monospace; font-size: 12px; text-transform: uppercase; transition: opacity 0.3s ease; }
+.nav-link:hover { opacity: 0.7; }
+.logo { height: 24px; }
+.hero-section { display: flex; justify-content: space-between; align-items: center; flex-grow: 1; padding-bottom: 50px; gap: 40px; margin-top: 40px;}
+.hero-content { max-width: 600px; }
+.hero-title { font-family: 'Space Mono', monospace; font-size: 56px; line-height: 1.1; margin-bottom: 24px; font-weight: 700; letter-spacing: -1px; }
+.hero-subtitle { font-size: 14px; line-height: 1.6; margin-bottom: 40px; color: rgba(255, 255, 255, 0.85); }
+.hero-buttons { display: flex; gap: 16px; }
+
+/* === Кнопки === */
+.btn { display: flex; align-items: center; justify-content: center; padding: 12px 24px; font-size: 14px; font-weight: 500; cursor: pointer; border-radius: 4px; transition: all 0.3s ease; font-family: 'Space Mono', monospace; }
+
+.btn-learn { background: #ffffff; color: #2a0a5e; border: 2px solid #ffffff; gap: 8px; clip-path: polygon(15px 0, 100% 0, 100% 100%, 0 100%); }
+.btn-learn .arrow { background: #2a0a5e; color: white; padding: 2px 6px; border-radius: 2px; }
+.btn-learn:hover { background: transparent; color: #ffffff; }
+
+.btn-play { background: transparent; color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.5); gap: 10px; }
+.btn-play:hover { background: rgba(255, 255, 255, 0.1); }
+.play-dot { width: 18px; height: 18px; border-radius: 50%; background: #ffffff; position: relative; display: inline-block; }
+.play-dot::after { content: ""; position: absolute; left: 7px; top: 5px; border-left: 6px solid #2a0a5e; border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+
+/* === Карточка Авторизации === */
+.auth-card { width: 360px; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
+.auth-header { background: #2a0a5e; padding: 24px; text-align: center; }
+.auth-title { font-family: 'Space Mono', monospace; color: #ffffff; font-size: 18px; font-weight: 700; letter-spacing: 1px; }
+
+/* Табы Personal / Business */
+.auth-tabs { display: flex; width: 100%; background: #2a0a5e; }
+.tab { flex: 1; padding: 16px 0; background: #2a0a5e; border: none; font-family: 'Space Mono', monospace; font-size: 14px; color: #ffffff; cursor: pointer; border-radius: 12px 12px 0 0; transition: background 0.3s ease; }
+.tab.active { background: #ffffff; color: #2a0a5e; }
+
+.auth-body { padding: 24px; display: flex; flex-direction: column; align-items: center; }
+
+/* Поле ввода (Инпут) */
+.auth-input { width: 100%; padding: 14px 16px; border: 1px solid rgba(42, 10, 94, 0.3); border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 14px; color: #2a0a5e; background: #ffffff; transition: all 0.3s ease; margin-bottom: 16px; outline: none; }
+.auth-input:focus { border-color: #2a0a5e; box-shadow: 0 0 0 2px rgba(42, 10, 94, 0.1); }
+
+/* Кнопки формы */
+.btn-gold-solid { width: 100%; background: #bfa15f; color: #ffffff; border: 2px solid #bfa15f; padding: 14px; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 14px; cursor: pointer; transition: all 0.3s ease; margin-bottom: 20px; }
+.btn-gold-solid:hover { background: transparent; color: #bfa15f; }
+
+.btn-google-outline { width: 100%; display: flex; align-items: center; justify-content: center; gap: 12px; background: transparent; color: #bfa15f; border: 2px solid #bfa15f; padding: 12px; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; margin-bottom: 16px; }
+.btn-google-outline:hover { background: #bfa15f; color: #ffffff; }
+
+.btn-create-outline { width: 100%; background: transparent; color: #bfa15f; border: 1px solid #bfa15f; padding: 14px; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.3s ease; }
+.btn-create-outline:hover { background: #bfa15f; color: #ffffff; }
+
+.auth-status { width: 100%; min-height: 34px; margin-top: 14px; padding: 10px 12px; border-radius: 6px; background: #f5f2e9; color: #2a0a5e; font-size: 12px; line-height: 1.35; }
+
+/* Разделитель "or" */
+.divider { width: 100%; text-align: center; position: relative; margin-bottom: 20px; }
+.divider::before { content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: #e0e0e0; z-index: 1; }
+.divider span { background: #ffffff; padding: 0 10px; color: #888; font-size: 12px; position: relative; z-index: 2; }
+
+/* === Секция Криптовалют === */
+.crypto-section { display: flex; justify-content: center; align-items: center; gap: 40px; padding: 60px 0; width: 100%; }
+.crypto-column { display: flex; flex-direction: column; gap: 30px; width: 250px; }
+.crypto-column.left .crypto-item { justify-content: flex-end; }
+.crypto-column.right .crypto-item { justify-content: flex-start; }
+.crypto-item { display: grid; grid-template-columns: auto auto auto 24px; align-items: center; gap: 12px; font-family: 'Space Mono', monospace; font-size: 14px; transition: transform 0.2s ease, color 0.2s ease; }
+.crypto-column.right .crypto-item { grid-template-columns: 24px auto auto auto; }
+.crypto-item.is-updated { transform: translateY(-2px); color: #f2d27b; }
+.crypto-price { font-weight: 700; }
+.crypto-name { color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 12px; }
+.crypto-change { font-size: 12px; font-weight: 700; }
+.change-positive { color: #7ee7a1; }
+.change-negative { color: #ff8a8a; }
+.crypto-icon { width: 24px; height: 24px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25); }
+.icon-btc { background: #f7931a; }
+.icon-eth { background: #627eea; }
+.icon-sol { background: linear-gradient(135deg, #00ffa3, #dc1fff); }
+.icon-bnb { background: #f3ba2f; }
+.icon-usdt { background: #26a17b; }
+.icon-doge { background: #c2a633; }
+
+/* Выпадающий список в центре */
+.crypto-center { position: relative; width: 400px; height: 400px; display: flex; justify-content: center; align-items: center; }
+.circle-outer { width: 100%; height: 100%; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.1); display: flex; justify-content: center; align-items: center; }
+.circle-inner { width: 70%; height: 70%; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.2); background: radial-gradient(circle, rgba(42,10,94,0.2) 0%, rgba(0,0,0,0) 70%); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px; }
+.center-title { font-family: 'Space Mono', monospace; font-size: 16px; letter-spacing: 2px; }
+.market-status { min-width: 58px; padding: 5px 10px; border-radius: 999px; background: rgba(191, 161, 95, 0.18); color: #f2d27b; font-family: 'Space Mono', monospace; font-size: 11px; text-align: center; letter-spacing: 1px; }
+
+.dropdown-container { position: relative; width: 220px; }
+
+.btn-add-crypto { width: 100%; background: transparent; color: #2a0a5e; border: 1px solid #2a0a5e; background-color: #ffffff; padding: 12px 16px; border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 12px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: all 0.3s ease; }
+.btn-add-crypto.active { background: #bfa15f; color: #ffffff; border-color: #bfa15f; }
+
+.dropdown-menu { position: absolute; top: 100%; left: 0; width: 100%; background: #ffffff; border-radius: 6px; margin-top: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); display: none; flex-direction: column; overflow: hidden; z-index: 10; }
+.dropdown-menu.show { display: flex; }
+.dropdown-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; font-family: 'Space Mono', monospace; font-size: 14px; color: #2a0a5e; cursor: pointer; background: #ffffff; transition: background 0.2s; }
+.dropdown-item:hover { background: #e0e0e0; }
+.crypto-icon-small { width: 22px; height: 22px; border-radius: 50%; object-fit: cover; }
+
+.info-modal { width: min(620px, calc(100vw - 32px)); border: 0; border-radius: 10px; padding: 42px; background: #ffffff; color: #2a0a5e; box-shadow: 0 25px 90px rgba(0,0,0,0.45); }
+.info-modal::backdrop { background: rgba(1, 7, 18, 0.78); }
+.info-modal h2 { margin-bottom: 16px; font-family: 'Space Mono', monospace; font-size: clamp(28px, 4vw, 42px); line-height: 1.05; }
+.info-modal p { line-height: 1.65; }
+.modal-kicker { margin-bottom: 12px; color: #bfa15f; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 2px; }
+.modal-close { position: absolute; top: 14px; right: 14px; width: 34px; height: 34px; border: 0; border-radius: 50%; background: #2a0a5e; color: #ffffff; font-size: 22px; cursor: pointer; }
+
+@media (max-width: 980px) {
+  #app { padding: 0 24px; }
+  .main-nav { display: none; }
+  .menu-icon { display: flex; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,0.35); align-items: center; justify-content: center; flex-direction: column; gap: 5px; }
+  .menu-icon span { display: block; width: 18px; height: 2px; background: #ffffff; }
+  .hero-section { flex-direction: column; align-items: flex-start; margin-top: 24px; }
+  .hero-content { max-width: 100%; }
+  .hero-title { font-size: clamp(42px, 12vw, 76px); }
+  .auth-card { width: min(100%, 430px); }
+  .crypto-section { flex-direction: column; gap: 28px; padding: 36px 0 64px; }
+  .crypto-column { width: 100%; max-width: 520px; gap: 14px; }
+  .crypto-column.left .crypto-item,
+  .crypto-column.right .crypto-item { justify-content: initial; }
+  .crypto-item,
+  .crypto-column.right .crypto-item { grid-template-columns: 28px 1fr auto auto; width: 100%; padding: 14px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: rgba(255,255,255,0.06); }
+  .crypto-column.left .crypto-item .crypto-icon { grid-column: 1; grid-row: 1; }
+  .crypto-column.left .crypto-item .crypto-name { grid-column: 2; }
+  .crypto-column.left .crypto-item .crypto-price { grid-column: 3; }
+  .crypto-column.left .crypto-item .crypto-change { grid-column: 4; }
+  .crypto-center { order: -1; width: min(360px, 90vw); height: min(360px, 90vw); }
+}
+
+@media (max-width: 560px) {
+  #app { padding: 0 20px; }
+  .header { padding: 24px 0; }
+  .hero-section { gap: 28px; }
+  .hero-title { font-size: clamp(38px, 13vw, 56px); letter-spacing: 0; }
+  .hero-subtitle { font-size: 14px; }
+  .hero-buttons { flex-direction: column; align-items: stretch; width: 100%; }
+  .btn { width: 100%; min-height: 52px; }
+  .auth-card { border-radius: 10px; }
+  .crypto-item,
+  .crypto-column.right .crypto-item { grid-template-columns: 28px 1fr; }
+  .crypto-price,
+  .crypto-change { grid-column: 2; justify-self: start; }
+  .crypto-center { width: min(300px, 88vw); height: min(300px, 88vw); }
+  .dropdown-container { width: 190px; }
+  .info-modal { padding: 34px 24px; }
+}
