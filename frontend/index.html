@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KAIROS | Digital Bridge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Фоновое видео -->
+  <video class="bg-video" autoplay loop muted playsinline>
+    <source src="/HP.mp4" type="video/mp4">
+  </video>
+  <div class="bg-overlay"></div>
+
+  <div id="app">
+    <!-- Шапка -->
+    <header class="header">
+      <img src="/icons.svg" alt="KAIROS" class="logo" />
+      <nav class="main-nav">
+        <a href="#" class="nav-link">HOME</a>
+        <a href="#" class="nav-link">ABOUT US</a>
+        <a href="#" class="nav-link">PRODUCTS</a>
+        <a href="#" class="nav-link">CONTACT US</a>
+      </nav>
+      <div class="menu-icon">
+        <span></span><span></span><span></span>
+      </div>
+    </header>
+
+    <!-- Главный экран -->
+    <main class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">FROM THE<br>FIELD OF ALL<br>POSSIBILITY</h1>
+        <p class="hero-subtitle">This is an emergent space where ideas are not created, but carefully discovered. We navigate the vast potential to bring forth only the most resonant patterns and coherent forms. Here, the future is curated from the infinite.</p>
+        
+        <div class="hero-buttons">
+          <button class="btn btn-learn" type="button" data-open-modal>Learn More <span class="arrow">→</span></button>
+          <button class="btn btn-play" type="button" data-open-modal>Play Video <span class="play-dot" aria-hidden="true"></span></button>
+        </div>
+      </div>
+
+      <!-- Карточка авторизации -->
+      <div class="auth-card">
+        <div class="auth-header">
+          <h2 class="auth-title">ONLINE BANKING</h2>
+        </div>
+        
+        <!-- Табы Personal / Business -->
+        <div class="auth-tabs">
+          <button class="tab active" type="button" data-target="personal">Personal</button>
+          <button class="tab" type="button" data-target="business">Business</button>
+        </div>
+        
+        <div class="auth-body">
+          <input type="email" class="auth-input" placeholder="Enter Email" />
+          <button class="btn-gold-solid" type="button" data-google-login>Sign in with email</button>
+          
+          <div class="divider">
+            <span>or</span>
+          </div>
+          
+          <button class="btn-google-outline" id="btn-google-login" type="button" data-google-login>
+            <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+            Google
+          </button>
+          
+          <button class="btn-create-outline" type="button" data-google-login>Create account</button>
+          <p class="auth-status" id="auth-status">Google OAuth2 is ready</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Секция Криптовалют -->
+    <section class="crypto-section">
+      <div class="crypto-column left">
+      <div class="crypto-item">
+      <span class="crypto-price" id="price-btc">Loading</span>
+      <span class="crypto-change" id="change-btc" style="font-size: 12px; margin-left: 8px;">0.00%</span>
+      <span class="crypto-name">Bitcoin</span>
+      <img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png" alt="BTC" class="crypto-icon" width="24" height="24">
+    </div>
+  <div class="crypto-item">
+    <span class="crypto-price" id="price-eth">Loading</span>
+    <span class="crypto-change" id="change-eth" style="font-size: 12px; margin-left: 8px;">0.00%</span>
+    <span class="crypto-name">Ethereum</span>
+    <img src="https://assets.coingecko.com/coins/images/279/large/ethereum.png" alt="ETH" class="crypto-icon" width="24" height="24">
+  </div>
+  <div class="crypto-item">
+    <span class="crypto-price" id="price-sol">Loading</span>
+    <span class="crypto-change" id="change-sol" style="font-size: 12px; margin-left: 8px;">0.00%</span>
+    <span class="crypto-name">Solana</span>
+    <img src="https://assets.coingecko.com/coins/images/4128/large/solana.png" alt="SOL" class="crypto-icon" width="24" height="24">
+  </div>
+</div>
+      <div class="crypto-center">
+        <div class="circle-outer">
+          <div class="circle-inner">
+            <h3 class="center-title">ONLINE BANKING</h3>
+            <p class="market-status" id="market-status">SYNC</p>
+            
+            <!-- Выпадающий список -->
+          <div class="dropdown-container">
+          <button class="btn-add-crypto" id="dropdown-btn">
+          <span>Add a Cryptocurrency</span>
+          <!-- Иконка стрелочки -->
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="arrow-icon">
+      <path d="M9 18l6-6-6-6"/>
+    </svg>
+  </button>
+  
+ <div class="dropdown-menu" id="crypto-menu">
+  <div class="dropdown-item" data-id="adausdt" data-label="ada" data-name="Cardano" data-img="https://assets.coingecko.com/coins/images/975/large/cardano.png">
+    <img src="https://assets.coingecko.com/coins/images/975/large/cardano.png" alt="ADA" class="crypto-icon-small" width="20" height="20"> Cardano (ADA)
+  </div>
+  <div class="dropdown-item" data-id="dotusdt" data-label="dot" data-name="Polkadot" data-img="https://assets.coingecko.com/coins/images/12171/large/polkadot.png">
+    <img src="https://assets.coingecko.com/coins/images/12171/large/polkadot.png" alt="DOT" class="crypto-icon-small" width="20" height="20"> Polkadot (DOT)
+  </div>
+  <div class="dropdown-item" data-id="linkusdt" data-label="link" data-name="Chainlink" data-img="https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png">
+    <img src="https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png" alt="LINK" class="crypto-icon-small" width="20" height="20"> Chainlink (LINK)
+  </div>
+  <div class="dropdown-item" data-id="trxusdt" data-label="trx" data-name="TRON" data-img="https://assets.coingecko.com/coins/images/1094/large/tron-logo.png">
+    <img src="https://assets.coingecko.com/coins/images/1094/large/tron-logo.png" alt="TRX" class="crypto-icon-small" width="20" height="20"> TRON (TRX)
+  </div>
+</div>
+</div>
+            
+          </div>
+        </div>
+      </div>
+
+     <div class="crypto-column right">
+  <div class="crypto-item">
+    <img src="https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png" alt="BNB" class="crypto-icon" width="24" height="24">
+    <span class="crypto-name">Binance Coin</span>
+    <span class="crypto-price" id="price-bnb">Loading</span>
+    <span class="crypto-change" id="change-bnb" style="font-size: 12px; margin-right: 8px;">0.00%</span>
+  </div>
+  <div class="crypto-item">
+    <img src="https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png" alt="XRP" class="crypto-icon" width="24" height="24">
+    <span class="crypto-name">XRP</span>
+    <span class="crypto-price" id="price-xrp">Loading</span>
+    <span class="crypto-change" id="change-xrp" style="font-size: 12px; margin-right: 8px;">0.00%</span>
+  </div>
+  <div class="crypto-item">
+    <img src="https://assets.coingecko.com/coins/images/5/large/dogecoin.png" alt="DOGE" class="crypto-icon" width="24" height="24">
+    <span class="crypto-name">Dogecoin</span>
+    <span class="crypto-price" id="price-doge">Loading</span>
+    <span class="crypto-change" id="change-doge" style="font-size: 12px; margin-right: 8px;">0.00%</span>
+  </div>
+</div>
+    </section>
+  </div>
+  
+  <dialog class="info-modal" id="info-modal">
+    <button class="modal-close" id="modal-close" type="button" aria-label="Close">×</button>
+    <p class="modal-kicker">THE DIGITAL BRIDGE</p>
+    <h2>Between realtime and tomorrow</h2>
+    <p>This page uses the provided hero video, Google OAuth2 backend authorization, and public WebSocket streams for live cryptocurrency prices.</p>
+  </dialog>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
