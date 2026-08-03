@@ -73,3 +73,19 @@ pip install -r requirements.txt
 
 # Запуск сервера
 uvicorn main:app --reload
+```
+Дашборд откроется по http://localhost:8000
+### 3. Запуск Frontend(Vite)
+Откройте новую вкладку терминала и перейдите в папку фронтенда:
+```bash
+cd frontend
+
+# Установка NPM-пакетов
+npm install
+
+# Запуск сервера для разработки
+npm run dev
+```
+Дашборд откроется под http://localhost:5173
+
+
