@@ -1,0 +1,12 @@
+{
+  "name": "crypto-trainee-task",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "frontend:dev": "npm --prefix frontend run dev",
+    "frontend:build": "npm --prefix frontend run build",
+    "frontend:preview": "npm --prefix frontend run preview",
+    "backend:dev": "cd backend && uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
+  }
+}
+
