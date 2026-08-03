@@ -1,5 +1,5 @@
 export function initAuthFlow() {
-  const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
+  const backendUrl = import.meta.env.VITE_BACKEND_URL || 'https://crypto-qifp.onrender.com';
   const loginButtons = document.querySelectorAll('[data-google-login]');
   const status = document.getElementById('auth-status');
   const params = new URLSearchParams(window.location.search);
