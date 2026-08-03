@@ -8,7 +8,7 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 
 Профессиональный криптовалютный дашборд с потоковыми данными в реальном времени и интеграцией Google OAuth2. Проект выполнен в архитектуре монорепозитория с упором на Pixel-Perfect вёрстку, чистый модульный код и высокую производительность.
-
+ССЫЛКА : https://crypto-site-inky.vercel.app
 ---
 
 ## 📋 Содержание
